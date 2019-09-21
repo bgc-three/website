@@ -1,10 +1,21 @@
 <html>
   <head>
-    <title>Hello, world!</title>
+    <title>welcome!</title>
     <!-- "style" changes how your web page LOOKS like -->
     <style>
-      body {
+      body{
+      
+         
+        display :flex; 
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        background: #202020;
+        color: #f64279;;
         font-family: Arial, Helvetica, sans-serif;
+      }
+      .greeting {
+        color:teal;
       }
       .name1 {
         color: MediumVioletRed;
@@ -12,30 +23,47 @@
       .name2 {
         color: LightSeaGreen;
       }
+      #kara-walker {
+  background-color: #303030;
+}
     </style>
+
     <!-- "script" changes what your web page DOES -->
     <script>
       let greetings = [
-        "Hello, world!",    // english
+        "baccon!",    // english 
         "Hola, Mundo!",     // spanish
         "Salamu, Dunia!",   // swahili
         "Bonjour le monde!" // french
       ]
       let greetingsIdx = 0
       function changeMessage(greetingElement) {
-        greetingsIdx = greetingsIdx + 1
+        if (greetingsIdx==3){
+          greetingsIdx=0
+          
+        }else{
+          greetingsIdx = greetingsIdx + 1
+        }
+        
         greetingElement.innerText = greetings[greetingsIdx]
       }
     </script>
   </head>
   <!-- "body" lists what your web page CONTAINS -->
-  <body>  
-    <h1 id="greeting" onClick="changeMessage(this)">Hello, world!</h1>
+  <body>
+      <canvas id="kara-walker" width="400px" height="400px"></canvas>
+      <script>
+          const canvas = document.getElementById('kara-walker')
+          const ctx = canvas.getContext('2d')
+          ctx.fillStyle = "#f64279"
+          ctx.fillRect(150,150,100,100,100,100)
+        </script>
+    <h1 class="greeting" onClick="changeMessage(this)">baccon!</h1>
     <p>
       by
-      <span class="name1">NAME_1</span>
+      <span class="name1">aumoria</span>
       and
-      <span class="name2">NAME_2</span>
+      <span class="name2">paige</span>
     </p>
   </body>
 </html>
