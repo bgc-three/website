@@ -9,7 +9,10 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    
+
+    - name: Echo Hello
+      run: echo 'Hello, world!'
+      
     - name: Install CF CLI
       run: curl -L "https://packages.cloudfoundry.org/stable?release=linux64-binary&source=github" | tar -zx
 
